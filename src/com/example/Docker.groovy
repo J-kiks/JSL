@@ -24,9 +24,4 @@ class Docker implements Serializable {
   def dockerPush(String imageName) {
       script.sh "docker push $imageName"
   }
-
-  def buildJarFile() {
-    script.echo "building the application for branch '${script.BRANCH_NAME}'"
-    script.sh 'mvn package'
-  }
 }
