@@ -1,7 +1,6 @@
 #!/user/bin/env groovy
 
-import com.example.Docker
-
 def call() {
-    return new Docker(this).buildJarFile()
+    echo "building the application for branch $BRANCH_NAME"
+    sh 'mvn package'
 }
